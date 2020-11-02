@@ -1,4 +1,7 @@
 # snackshoppimg
+```
+零食购物商城系统
+```
 
 ## Project setup
 ```
