@@ -1,0 +1,7 @@
+{
+  "banners|3-6": [{
+    // "image": "Random.image('500x300')",//生成图片
+    "image": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604508346788&di=aacf4feeb92b92f93bfcbafab78eb47d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201406%2F18%2F20140618173806_2z8s5.thumb.700_0.jpeg",
+    "link": "http://product.dangdang.com/1541446077.html",//图片链接
+  }]
+}
