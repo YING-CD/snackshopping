@@ -1,7 +1,39 @@
 {
   "banners|3-6": [{
-    // "image": "Random.image('500x300')",//生成图片
-    "image": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604508346788&di=aacf4feeb92b92f93bfcbafab78eb47d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201406%2F18%2F20140618173806_2z8s5.thumb.700_0.jpeg",
+    "image": "@image('500x500', '#50B347', '#FFF', 'Mock.js')",//生成图片
+    // "image": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604508346788&di=aacf4feeb92b92f93bfcbafab78eb47d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201406%2F18%2F20140618173806_2z8s5.thumb.700_0.jpeg",
     "link": "http://product.dangdang.com/1541446077.html",//图片链接
+  }],
+  "recommend|9": [{
+    "title": "@cparagraph",
+    "image":"https://img14.360buyimg.com/n0/jfs/t1/31094/31/7168/107596/5c946073Efe02c65f/ae4541eef5dbe619.jpg",
+     "name": "@cname()",
+     "price|1-100.2": 1,
+     "cfav|1-100": 1,
+     "iid": "@id",
+
+  }],
+  "classification|10-30": [{
+    "title": "@ctitle",
+     "cid": "@id",
+      "snacks|10-30": [{
+        "title": "@cparagraph",
+        "image":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604600022553&di=28b018cf2258461cbc00e635f8f2e949&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F03%2F07%2Fee10b18785f1a43b816ef1819cf81cc6.jpg",
+        "price|1-100.2": 1,
+        "cfav|1-10": 1,
+        "iid": "@id",
+      }]
+  }],
+  "favorite": {
+    "snacks|20": [{
+     "title": "你可能想要",
+      "image":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604600143810&di=853221c893fee13e0c0ac036f612cfb7&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2F%2Felement_pic%2F20%2F08%2F03%2Fb2f7b84ce02bf80e1654fb9952eddb6f.jpg%2521%2Ffw%2F253%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue",
+       "price|1-100.2": 1,
+       "cfav|1-10": 1,
+       "iid": "@id",
   }]
+  }
+  
+
+
 }

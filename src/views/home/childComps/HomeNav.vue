@@ -30,7 +30,6 @@ export default {
     height: 100px;
     width: 1200px;
     margin: 0 auto;
-
     position: relative;
   }
 
@@ -52,9 +51,8 @@ export default {
   }
 
   .nar-bar .search {
-    /* height: 40px; */
-    /* border: 1px  red solid; */
-    margin-left:180px;
+    /* margin-left: 155px; */
+    margin-left: 26%;
   }
 
   .nar-bar .search .search-input {
@@ -63,7 +61,7 @@ export default {
     padding: 0;
     border: 2px red solid;
     margin-top: 0;
-    
+   
     float: left;
   }
 

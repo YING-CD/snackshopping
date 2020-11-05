@@ -6,7 +6,7 @@
       class="swiper-item"
     >
       <a :href="item.link">
-        <img :src="item.image" alt="轮播图" />
+        <img :src="item.image" alt="轮播图"/>
       </a>
     </swiper-item>
   </swiper>
@@ -42,14 +42,4 @@ export default {
 };
 </script>
 <style  scoped>
-.swiper {
-  width: 650px;
-  height: 450px;
-  background-color: blueviolet;
-}
-.swiper-item {
-  width: 650px;
-  height: 450px;
-  background-color: red;
-}
 </style>

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Mock = require('mockjs');//mockjs 导入依赖模块
+const Random = Mock.Random; //获取mock.random对象
 const JSON5 = require('json5');
 var obj = require('./data')
 

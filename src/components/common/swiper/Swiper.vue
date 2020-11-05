@@ -8,6 +8,8 @@
           <div v-for="(item, index) in slideCount" class="indi-item" :class="{active: index === currentIndex-1}" :key="index"></div>
         </slot>
       </div>
+      <div  @click="previous()" class="prev"></div>
+      <div @click="next()" class="next"></div>
     </div>
 </template>
 
@@ -236,7 +238,7 @@
     width: 8px;
     height: 8px;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: gray;
     line-height: 8px;
     text-align: center;
     font-size: 12px;
@@ -245,5 +247,31 @@
 
   .indi-item.active {
     background-color: rgba(212,62,46,1.0);
+  }
+
+  .prev .next {
+    cursor: pointer;
+  }
+
+  .prev {
+    position: absolute;
+    left: 4px;
+    top: 40%;
+    width: 10px;
+    height: 10px;
+    border-bottom: 6px solid white;
+    border-left: 6px solid white;
+    transform: rotate(45deg);
+  }
+  
+  .next {
+    position: absolute;
+    right: 4px;
+    top: 40%;
+    width: 10px;
+    height: 10px;
+    border-top: 6px solid white;
+    border-right: 6px solid white;
+    transform: rotate(45deg);
   }
 </style>
