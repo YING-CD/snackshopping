@@ -1,7 +1,7 @@
 <template>
   <div class="snacks" @click="goToDetail">
     <!-- <img v-lazy="getImg" :key="getImg" alt="零食图片"> -->
-    <img :src="snacks.image" alt="零食图片" />
+    <img :src="snacks.image" alt="零食图片"/>
     <div class="snacks-info">
       <p>{{ snacks.title }}</p>
       <span class="price">¥{{ snacks.price }}</span>
@@ -46,6 +46,7 @@ export default {
 }
 
 .snacks-info {
+  padding: 0 10px;
   font-size: 12px;
   position: absolute;
   bottom: 5px;
@@ -78,6 +79,6 @@ export default {
   top: 0;
   width: 14px;
   height: 14px;
-  background: url("./../../../assets/img/common/collect.svg") 0 0/14px 14px;
+  background: url("~assets/img/common/collect.svg") 0 0/14px 14px;
 }
 </style>

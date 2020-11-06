@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Groups',
+  name: 'Cart',
   data() { 
     return {
 

@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="classification">
     <div class="cl-title">全部分类</div>
-    <div class="classification" v-for="item in classification" :key="item.name">
+    <div v-for="item in classification" :key="item.name">
       <ul>
-        <li class="cl-item">{{ item.title }}</li>
+        <li class="cl-item" @click="clClick(item.cid)">{{ item.title }}</li>
       </ul>
     </div>
   </div>
@@ -21,13 +21,22 @@ export default {
     }
   },
   components: {},
-  methods: {},
+  methods: {
+    clClick(id) {
+      this.$router.push({ path: "/category",query:{id}});
+    }
+  },
   mounted() {}
 };
 </script>
   
 <style>
-.cl-title {
+.classification {
+  width: 200px;
+  z-index: 9;
+}
+
+.classification .cl-title {
   font-weight: 700;
   font-size: 23px;
   font-family: "黑体";
@@ -53,7 +62,7 @@ export default {
   cursor: pointer;
 }
 
-.cl-item {
+.classification .cl-item {
   line-height: 10px;
   text-align: left;
   padding-left: 10px;
@@ -61,10 +70,9 @@ export default {
   color: #1b4f97;
   font-size: 14px;
   cursor: pointer;
-  
 }
 
-.cl-item:hover {
+.classification .cl-item:hover {
   color: red;
   text-decoration: underline;
 }

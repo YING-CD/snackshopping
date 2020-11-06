@@ -1,17 +1,16 @@
 <template>
   <div id="home" ref="home">
-    <home-nav></home-nav>
+    <home-nav class="home-nav"></home-nav>
     <div class="feature">
-      <recommend class="recommend" :recommend="recommend"></recommend>
-      <home-swiper :banners="banners" class="home-swiper"></home-swiper>
-      <classification
-        class="classification"
-        :classification="classification"
-      ></classification>
+      <recommend :recommend="recommend"></recommend>
+      <home-swiper :banners="banners"></home-swiper>
+      <classification :classification="classification"></classification>
     </div>
     <div class="content">
-      <group-item class="group-item" :groups="classification"></group-item>
+      <favorite :favorite="favorite"></favorite>
+      <group-item :groups="classification"></group-item>
     </div>
+    <div class="foot"></div>
     <back-top @backTop="backTop" class="back-top" v-show="showBackTop">
       <img src="~assets/img/common/top.png" alt="回到顶部" />
     </back-top>
@@ -20,15 +19,15 @@
 
 <script>
 import HomeNav from "./childComps/HomeNav";
-import HomeSwiper from "./childComps/HomeSwiper";
-import Recommend from "./childComps/Recommend";
 import Classification from "./childComps/Classification";
-import GroupItem from "./childComps/GroupItem";
+import HomeSwiper from "./childComps/feature/HomeSwiper";
+import Recommend from "./childComps/feature/Recommend";
+import GroupItem from "./childComps/group/GroupItem";
+import Favorite from "./childComps/group/Favorite";
 
 import BackTop from "content/backTop/BackTop";
 
 import axios from "axios";
-// import Mock from 'mock/index';
 
 export default {
   name: "Home",
@@ -38,6 +37,7 @@ export default {
     Recommend,
     Classification,
     GroupItem,
+    Favorite,
     BackTop
   },
   data() {
@@ -45,6 +45,7 @@ export default {
       banners: [],
       recommend: [],
       classification: [],
+      favorite: {},
       showBackTop: true
       // groups: [],
     };
@@ -58,13 +59,14 @@ export default {
   methods: {
     getBanners() {
       axios
-        .get("/home/bannans")
+        .get("/home/information")
         .then(res => {
           console.log(res.data);
           var result = res.data;
           this.banners = result.banners;
           this.recommend = result.recommend;
           this.classification = result.classification;
+          this.favorite = result.favorite;
           // this.groups = result.groups;
         })
         .catch(err => {
@@ -86,36 +88,32 @@ export default {
   margin: 0 auto;
 }
 
+.home-nav {
+  position: fixed;
+  top: 0px;
+  padding-top: 20px;
+  z-index: 99;
+  background-color: white;
+}
+
 .feature {
   width: 1280px;
-  margin: 0 auto;
+  margin-top: 50px;
   display: flex;
-}
-
-.feature .recommend {
-  width: 300px;
-  height: 450px;
-  padding: 15px 15px;
-  border: 2px rgb(221, 171, 43) solid;
-  margin-right: 15px;
-}
-
-.feature .home-swiper {
-  width: 650px;
-  height: 450px;
-  margin: 0 auto;
-}
-
-.feature .classification {
-  width: 200px;
-  z-index: 9;
-  /* border: 2px #db7240 solid; */
 }
 
 .content {
   position: absolute;
   width: 1200px;
-  top: 620px;
+  top: 555px;
+}
+
+.foot {
+  position: absolute;
+  width: 1260px;
+  top: 5295px;
+  color: red;
+  border: 2px red dotted;
 }
 
 .back-top {

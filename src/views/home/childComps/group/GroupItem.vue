@@ -1,21 +1,22 @@
 <template>
   <div>
-    <div class="groups clearfix" v-for="(item, index) in groups" :key="index">
+    <div class="groups clearfix" v-for="(item, index) in groups" :key="index"  v-show="(6 - index) > 0 ? true : false">
       <div class="group-title">{{ item.title }}</div>
-      <div class="more">点击更多 ....</div>
       <div
         class="group-goods "
         v-for="(sitem, index) in item.snacks"
         :key="index"
+        v-show="(9 - index) > 0 ? true : false"
       >
         <snacks-item :snacks="sitem" class="snacks-item"></snacks-item>
       </div>
+      <div class="more">点击浏览更多 ....</div>
     </div>
   </div>
 </template>
 
 <script>
-import SnacksItem from "./SnacksItem";
+import SnacksItem from "./../SnacksItem";
 export default {
   name: "GroupItem",
   components: {
@@ -40,12 +41,13 @@ export default {
   height: 560px;
   width: 1200px;
   overflow: hidden;
-  margin-top: 30px;
+  margin-bottom: 40px;
   position: relative;
 }
 
 .groups .group-title {
   width: 250px;
+  padding: 3px 7px;
   font-weight: 500;
   font-size: 23px;
   text-align: left;
@@ -54,24 +56,12 @@ export default {
   background-color:rgb(221, 171, 43);
 }
 
-.groups .more {
-  position: absolute;
-  right: 150px;
-  top: 12px;
-
-  font-weight: 700;
-  font-size: 16px;
-  font-family: "黑体";
-  color:rgb(211, 158, 26);
-  cursor: pointer;
-}
-
 .groups .group-goods {
   float: left;
 }
 
 /* 给父元素设置after元素和zoom样式 ,zoom兼容IE*/
- .clearfix::after {
+ /* .clearfix::after {
   content: "";
   display: block;
   clear: both;
@@ -80,7 +70,7 @@ export default {
 }
 .groups .clearfix {
   zoom: 1;
-}
+} */
 
 .groups .snacks-item {
   width: 190px;
@@ -89,5 +79,19 @@ export default {
   margin-right: 20px;
   /* box-sizing: border-box; */
   border: 2px rgb(221, 171, 43) solid;
+}
+.groups .more {
+  width: 190px;
+  margin-top: 120px;
+  float: left;
+  font-weight: 600;
+  text-align: center;
+  color: gray;
+  cursor: pointer;
+}
+
+.groups .more:hover {
+  font-weight: 700;
+  color: rgb(221, 171, 43);
 }
 </style>

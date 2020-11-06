@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="recommend">
     <div class="recomend-title">热门推荐</div>
     <snacks-item
       v-for="(item, index) in recommend"
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SnacksItem from "./SnacksItem";
+import SnacksItem from "./../SnacksItem";
 
 export default {
   name: "Recommend",
@@ -30,14 +30,14 @@ export default {
 };
 </script>
 <style  scoped>
-.snacks-item {
-  height: 80px;
-  width: 95px;
-  display: flex;
-  float: left;
-  align-items: space-around;
-  margin-top: 20px;
+.recommend {
+  width: 300px;
+  height: 450px;
+  padding: 15px 15px;
+  border: 2px rgb(221, 171, 43) solid;
+  margin-right: 15px;
 }
+
 
 .recomend-title {
   font-weight: 500;
@@ -54,6 +54,14 @@ export default {
   );
   /* -moz-linear-gradient(45deg, #2fd0d8, #db7240, #d4ba37, #6130f3, #1050aa); */
   /* -ms-linear-gradient(45deg, #2fd0d8, #db7240, #d4ba37, #6130f3, #1050aa); */
-  
+}
+
+.snacks-item {
+  height: 80px;
+  width: 95px;
+  display: flex;
+  float: left;
+  align-items: space-around;
+  margin-top: 20px;
 }
 </style>
