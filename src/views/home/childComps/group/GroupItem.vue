@@ -1,22 +1,22 @@
 <template>
-  <div>
-    <div class="groups clearfix" v-for="(item, index) in groups" :key="index"  v-show="(6 - index) > 0 ? true : false">
+  <div class="groups-contain">
+    <div class="groups" v-for="(item, index) in groups" :key="index"  v-show="(3 - index) > 0 ? true : false">
       <div class="group-title">{{ item.title }}</div>
       <div
         class="group-goods "
         v-for="(sitem, index) in item.snacks"
         :key="index"
-        v-show="(9 - index) > 0 ? true : false"
+        v-show="(11 - index) > 0 ? true : false"
       >
         <snacks-item :snacks="sitem" class="snacks-item"></snacks-item>
       </div>
-      <div class="more">点击浏览更多 ....</div>
+      <div class="more" @click="grclick(item.cid)">点击浏览更多 ....</div>
     </div>
   </div>
 </template>
 
 <script>
-import SnacksItem from "./../SnacksItem";
+import SnacksItem from "content/snacks/SnacksItem";
 export default {
   name: "GroupItem",
   components: {
@@ -30,57 +30,58 @@ export default {
       }
     }
   },
-
-  methods: {},
+  methods: {
+    grclick(cid) {
+       this.$router.push({ path: "/category",query:{cid}});
+    }
+  },
   mounted() {}
 };
 </script>
 
 <style>
-.groups {
-  height: 560px;
-  width: 1200px;
-  overflow: hidden;
-  margin-bottom: 40px;
-  position: relative;
+.groups-contain {
+  margin-top: 50px;
+  background-color: #E9EEF3;
 }
 
-.groups .group-title {
+.groups-contain .groups {
+  height: 560px;
+  width: 1280px;
+  margin-bottom: 40px;
+  /* overflow: hidden; */
+  
+  position: relative;
+  background-color: #dde4ee;
+}
+
+.groups-contain .groups .group-title {
   width: 250px;
   padding: 3px 7px;
+  margin-top: 5px;
+
   font-weight: 500;
   font-size: 23px;
   text-align: left;
   font-family: "黑体";
-  color: white;
-  background-color:rgb(221, 171, 43);
+  color: rgb(221, 171, 43);
+  /* background-color: rgb(221, 171, 43); */
 }
 
-.groups .group-goods {
+.groups-contain .groups .snacks-item {
   float: left;
-}
-
-/* 给父元素设置after元素和zoom样式 ,zoom兼容IE*/
- /* .clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-}
-.groups .clearfix {
-  zoom: 1;
-} */
-
-.groups .snacks-item {
   width: 190px;
   height: 200px;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-left: 20px;
   /* box-sizing: border-box; */
-  border: 2px rgb(221, 171, 43) solid;
+  border: 1px rgb(221, 171, 43) solid;
 }
-.groups .more {
+.groups-contain .groups .snacks-item:hover {
+  border: 1px white solid;
+}
+
+.groups-contain .groups .more {
   width: 190px;
   margin-top: 120px;
   float: left;

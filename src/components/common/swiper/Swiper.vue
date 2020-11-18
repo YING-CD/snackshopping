@@ -255,23 +255,33 @@
 
   .prev {
     position: absolute;
-    left: 4px;
+    left: 10px;
     top: 40%;
-    width: 10px;
-    height: 10px;
-    border-bottom: 6px solid white;
-    border-left: 6px solid white;
+    width: 15px;
+    height: 15px;
+    border-bottom: 3px solid white;
+    border-left: 3px solid white;
     transform: rotate(45deg);
+  }
+
+  .prev:hover {
+    border-bottom: 3px solid rgb(187, 116, 116);
+    border-left: 3px solid rgb(187, 116, 116);
   }
   
   .next {
     position: absolute;
-    right: 4px;
+    right: 10px;
     top: 40%;
-    width: 10px;
-    height: 10px;
-    border-top: 6px solid white;
-    border-right: 6px solid white;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
     transform: rotate(45deg);
+  }
+
+  .next:hover {
+    border-top: 3px solid  rgb(187, 116, 116);
+    border-right: 3px solid  rgb(187, 116, 116);
   }
 </style>

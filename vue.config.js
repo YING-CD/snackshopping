@@ -5,12 +5,14 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        'mock':'@/mock',
+        
         'components': '@/components',
         'content': 'components/content',
         'common': 'components/common',
         'assets': '@/assets',
+        'mock':'@/mock',
         'network': '@/network',
+        'store': '@/store',
         'views': '@/views',
       }
     }

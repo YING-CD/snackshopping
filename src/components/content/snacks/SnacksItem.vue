@@ -40,6 +40,7 @@ export default {
   cursor: pointer;
   height: 300px;
   width: 200px;
+  background-color: #fff;
 }
 .snacks img {
   width: 100%;

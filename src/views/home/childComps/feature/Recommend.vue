@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SnacksItem from "./../SnacksItem";
+import SnacksItem from "content/snacks/SnacksItem";
 
 export default {
   name: "Recommend",
@@ -35,9 +35,9 @@ export default {
   height: 450px;
   padding: 15px 15px;
   border: 2px rgb(221, 171, 43) solid;
-  margin-right: 15px;
+  margin: 10px;
+  float: left;
 }
-
 
 .recomend-title {
   font-weight: 500;

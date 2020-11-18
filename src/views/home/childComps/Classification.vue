@@ -22,8 +22,8 @@ export default {
   },
   components: {},
   methods: {
-    clClick(id) {
-      this.$router.push({ path: "/category",query:{id}});
+    clClick(cid) {
+      this.$router.push({ path: "/category",query:{cid}});
     }
   },
   mounted() {}

@@ -6,6 +6,9 @@ const Category = () => import('views/category/Category');
 const Detail = () => import('views/detail/Detail');
 const Cart = () => import('views/cart/Cart');
 const Profile = () => import('views/profile/Profile');
+const Order = () => import('views/order/Order');
+const Collect = () => import('views/collect/Collect');
+const ConfirmOrder = () => import('views/confirmOrder/ConfirmOrder');
 
 Vue.use(VueRouter);
 
@@ -27,12 +30,24 @@ const routes = [
     component: Detail
   },
   {
-    path: '/cart',
+    path: '/confirmOrder',
+    component: ConfirmOrder
+  },
+  {
+    path: '/shoppingCart',
     component: Cart
   },
   {
     path: '/profile',
     component: Profile
+  },
+  {
+    path: '/order',
+    component: Order
+  },
+  {
+    path: '/collect',
+    component: Collect
   },
   
 ];

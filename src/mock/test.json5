@@ -1,24 +1,50 @@
 {
   "banners|3-6": [{
-    "image": "@image('500x500', '#50B347', '#FFF', 'Mock.js')",//生成图片
-    // "image": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604508346788&di=aacf4feeb92b92f93bfcbafab78eb47d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201406%2F18%2F20140618173806_2z8s5.thumb.700_0.jpeg",
+    // "image": "@image('900x400', '#50B347', '#FFF', 'Mock.js')",//生成图片
+    "image": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604508346788&di=aacf4feeb92b92f93bfcbafab78eb47d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201406%2F18%2F20140618173806_2z8s5.thumb.700_0.jpeg",
     "link": "http://product.dangdang.com/1541446077.html",//图片链接
   }],
   "recommend|9": [{
-    "title": "@cparagraph",
-    "image":"https://img14.360buyimg.com/n0/jfs/t1/31094/31/7168/107596/5c946073Efe02c65f/ae4541eef5dbe619.jpg",
+    "title|+1": ['旺旺小面包','威化饼','梅干','奥利奥巧克力味','上好佳虾条','恒乐','田园薯片','小饼干','豌豆星系'],
+    "image|+1":[
+      'https://img14.360buyimg.com/n0/jfs/t1/31094/31/7168/107596/5c946073Efe02c65f/ae4541eef5dbe619.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2367094409,1728740736&fm=26&gp=0.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549077&di=3dfe53c7d639f47f94872965d00ce790&imgtype=0&src=http%3A%2F%2Fimg009.hc360.cn%2Fk3%2FM0E%2F5A%2F13%2FwKhQx1epOemEFPuxAAAAAPAPTts837.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1305317029,1896893326&fm=26&gp=0.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=3837125ab61bafbcb0e1120cbdc31730&imgtype=0&src=http%3A%2F%2Fimg13.360buyimg.com%2Fn1%2Fjfs%2Ft23827%2F174%2F926933239%2F172721%2F95aa67ff%2F5b49c1d8N98d312d3.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=0a0a0321a9205b27fb3588443d2eb2e8&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F16%2F10%2F09%2F1457f9e31aa3a4d.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=686832346c58e3d22b06a33f9a2dea4f&imgtype=0&src=http%3A%2F%2Fimg11.360buyimg.com%2FpopWaterMark%2Fg15%2FM04%2F01%2F04%2FrBEhWVLMqtsIAAAAAAH8oLUxrFYAAHrbAPSq20AAfy4723.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591895098&di=e90037eb29fe95449b5478428710ab83&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn7%2Fjfs%2Ft664%2F310%2F627233338%2F264524%2F703127e2%2F54784cb8nd02673e8.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549074&di=0d2ffab70daa1f388c15bf8643b29002&imgtype=0&src=http%3A%2F%2Fimage.suning.cn%2Fuimg%2Fsop%2Fcommodity%2F136721184118510567967210_x.jpg',
+    ],
      "name": "@cname()",
      "price|1-100.2": 1,
      "cfav|1-100": 1,
      "iid": "@id",
 
   }],
-  "classification|10-30": [{
-    "title": "@ctitle",
-     "cid": "@id",
-      "snacks|10-30": [{
-        "title": "@cparagraph",
-        "image":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604600022553&di=28b018cf2258461cbc00e635f8f2e949&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F03%2F07%2Fee10b18785f1a43b816ef1819cf81cc6.jpg",
+  "classification|10-20": [{
+    "title|+1": ['碳水快乐','上好佳美味','甜到你心里','我爱吃肉肉','尖叫鸡','嘎嘎嘎','水','奥利奥专场','梅干专场'],
+     "cid|+1": 1,
+      "snacks|10": [{
+        "title|+1":  ['夹心长饼','旺旺小面包','米多奇饼干','美味梅干','奥利奥巧克力味','上好佳虾条','逗乐薯片','田园薯片','EDO饼干','豌豆公主','逗乐薯片','田园薯片','一次就饱方便面','浪不浪的辣不辣','网兜的饼干'],
+         "image|+1":[
+           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604600022553&di=28b018cf2258461cbc00e635f8f2e949&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F03%2F07%2Fee10b18785f1a43b816ef1819cf81cc6.jpg',
+            'https://img14.360buyimg.com/n0/jfs/t1/31094/31/7168/107596/5c946073Efe02c65f/ae4541eef5dbe619.jpg',
+           'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2367094409,1728740736&fm=26&gp=0.jpg',
+           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549077&di=3dfe53c7d639f47f94872965d00ce790&imgtype=0&src=http%3A%2F%2Fimg009.hc360.cn%2Fk3%2FM0E%2F5A%2F13%2FwKhQx1epOemEFPuxAAAAAPAPTts837.jpg',
+           'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1305317029,1896893326&fm=26&gp=0.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=3837125ab61bafbcb0e1120cbdc31730&imgtype=0&src=http%3A%2F%2Fimg13.360buyimg.com%2Fn1%2Fjfs%2Ft23827%2F174%2F926933239%2F172721%2F95aa67ff%2F5b49c1d8N98d312d3.jpg',
+           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=0a0a0321a9205b27fb3588443d2eb2e8&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F16%2F10%2F09%2F1457f9e31aa3a4d.jpg',
+           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=686832346c58e3d22b06a33f9a2dea4f&imgtype=0&src=http%3A%2F%2Fimg11.360buyimg.com%2FpopWaterMark%2Fg15%2FM04%2F01%2F04%2FrBEhWVLMqtsIAAAAAAH8oLUxrFYAAHrbAPSq20AAfy4723.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591895098&di=e90037eb29fe95449b5478428710ab83&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn7%2Fjfs%2Ft664%2F310%2F627233338%2F264524%2F703127e2%2F54784cb8nd02673e8.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549074&di=0d2ffab70daa1f388c15bf8643b29002&imgtype=0&src=http%3A%2F%2Fimage.suning.cn%2Fuimg%2Fsop%2Fcommodity%2F136721184118510567967210_x.jpg',
+            'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2388027424,905861142&fm=26&gp=0.jpg',
+            'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1701310265,3237690418&fm=26&gp=0.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549072&di=3173bf434ea76dbcecfa652b320bfdda&imgtype=0&src=http%3A%2F%2Fimg008.hc360.cn%2Fhb%2FwXF2fb2323C1b900328EC3CC1fD62f0A540.jpg',
+            'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1141639493,3887674287&fm=26&gp=0.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549072&di=13b7b3d48c7fa4a02d21f6fe8def6236&imgtype=0&src=http%3A%2F%2Fimg008.hc360.cn%2Fm8%2FM0B%2FEC%2F55%2FwKhQpVV-MgOEOHxwAAAAAAS12-g127.jpg',
+            ],
         "price|1-100.2": 1,
         "cfav|1-10": 1,
         "iid": "@id",
@@ -26,6 +52,7 @@
   }],
   "favorite": {
     "ftitle": "你可能想要",
+     "cid": "@id",
     "snacks|20-50": [{
       "title": "@cparagraph",
       "image":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604600143810&di=853221c893fee13e0c0ac036f612cfb7&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2F%2Felement_pic%2F20%2F08%2F03%2Fb2f7b84ce02bf80e1654fb9952eddb6f.jpg%2521%2Ffw%2F253%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue",
@@ -33,7 +60,40 @@
        "cfav|1-10": 1,
        "iid": "@id",
   }]
-  }
+  },
+  "collectList|0-10": [{
+      "title|+1":  ['米多奇饼干','美味梅干','奥利奥巧克力味','上好佳虾条','逗乐薯片','田园薯片','EDO饼干','豌豆公主','逗乐薯片','田园薯片','一次就饱方便面','浪不浪的辣不辣','网兜的饼干'],
+      "image|+1":[
+           'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2367094409,1728740736&fm=26&gp=0.jpg',
+           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549077&di=3dfe53c7d639f47f94872965d00ce790&imgtype=0&src=http%3A%2F%2Fimg009.hc360.cn%2Fk3%2FM0E%2F5A%2F13%2FwKhQx1epOemEFPuxAAAAAPAPTts837.jpg',
+           'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1305317029,1896893326&fm=26&gp=0.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=3837125ab61bafbcb0e1120cbdc31730&imgtype=0&src=http%3A%2F%2Fimg13.360buyimg.com%2Fn1%2Fjfs%2Ft23827%2F174%2F926933239%2F172721%2F95aa67ff%2F5b49c1d8N98d312d3.jpg',
+           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=0a0a0321a9205b27fb3588443d2eb2e8&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F16%2F10%2F09%2F1457f9e31aa3a4d.jpg',
+           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549076&di=686832346c58e3d22b06a33f9a2dea4f&imgtype=0&src=http%3A%2F%2Fimg11.360buyimg.com%2FpopWaterMark%2Fg15%2FM04%2F01%2F04%2FrBEhWVLMqtsIAAAAAAH8oLUxrFYAAHrbAPSq20AAfy4723.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591895098&di=e90037eb29fe95449b5478428710ab83&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn7%2Fjfs%2Ft664%2F310%2F627233338%2F264524%2F703127e2%2F54784cb8nd02673e8.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549074&di=0d2ffab70daa1f388c15bf8643b29002&imgtype=0&src=http%3A%2F%2Fimage.suning.cn%2Fuimg%2Fsop%2Fcommodity%2F136721184118510567967210_x.jpg',
+            'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2388027424,905861142&fm=26&gp=0.jpg',
+            'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1701310265,3237690418&fm=26&gp=0.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549072&di=3173bf434ea76dbcecfa652b320bfdda&imgtype=0&src=http%3A%2F%2Fimg008.hc360.cn%2Fhb%2FwXF2fb2323C1b900328EC3CC1fD62f0A540.jpg',
+            'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1141639493,3887674287&fm=26&gp=0.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605591549072&di=13b7b3d48c7fa4a02d21f6fe8def6236&imgtype=0&src=http%3A%2F%2Fimg008.hc360.cn%2Fm8%2FM0B%2FEC%2F55%2FwKhQpVV-MgOEOHxwAAAAAAS12-g127.jpg',
+            ],
+       "price|1-100.2": 1,
+       "cfav|1-10": 1,
+       "iid": "@id",
+  }],
+  "goodDtetail": {
+    "name": "星星糖",
+    "cparagraph": "多种口味星星糖，清香又美味，方便且好看",
+    "image|2-5": ["https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2741738376,184653293&fm=26&gp=0.jpg"],
+    "price|1-100.2": 1,
+    "sell_price|1-100.2": 1,
+    "cfav|1-10": 1,
+     "id": "@id",
+    "summary" : "@cparagraph",
+    "parameter": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605291053165&di=9128f93e59da120cfbc51d50ee114193&imgtype=0&src=http%3A%2F%2Fimage.suning.cn%2Fuimg%2Fsop%2Fcommodity%2F224903154881208978715000_x.jpg",
+    "comments|1-5":"@cparagraph", 
+  },
   
 
 
