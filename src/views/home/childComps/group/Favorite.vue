@@ -1,3 +1,10 @@
+<!--
+ * @Description: 你可能喜欢组件
+ * @Author: yingzi
+ * @Date: 2020-11-05 21:00:42
+ * @LastEditTime: 2020-11-19 16:19:08
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="favorite clearfix">
     <div class="favorite-header">
@@ -82,7 +89,9 @@ export default {
 .favorite .snacks-item {
   flex: 1;
   width: 190px;
-  height: 200px;
+  height: 244px;
+  padding: 20px;
+  box-sizing: border-box;
   margin-top: 20px;
   margin-right: 15px;
   border: 1px rgb(226, 135, 141)  solid;

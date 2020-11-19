@@ -1,9 +1,15 @@
+<!--
+ * @Description: 首页页面
+ * @Author: yingzi
+ * @Date: 2020-11-02 13:24:19
+ * @LastEditTime: 2020-11-19 16:21:26
+ * @LastEditors: yingzi
+-->
 <template>
   <div id="home" ref="home">
     <div class="feature">
       <recommend :recommend="recommend"></recommend>
       <home-swiper :banners="banners"></home-swiper>
-      <!-- <classification :classification="classification"></classification> -->
     </div>
     <div class="content">
       <favorite :favorite="favorite"></favorite>
@@ -13,7 +19,6 @@
 </template>
 
 <script>
-import Classification from "./childComps/Classification";
 import HomeSwiper from "./childComps/feature/HomeSwiper";
 import Recommend from "./childComps/feature/Recommend";
 import GroupItem from "./childComps/group/GroupItem";
@@ -26,7 +31,6 @@ export default {
   components: {
     HomeSwiper,
     Recommend,
-    Classification,
     GroupItem,
     Favorite,
   },

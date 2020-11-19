@@ -1,8 +1,10 @@
 <!--
-  * @Description: 我的订单页面
-  * @Author: yingzi
-  * @Date: 2020/11/12 00:36:25
-  *-->
+ * @Description: 我的订单页面
+ * @Author: yingzi
+ * @Date: 2020-11-12 00:36:20
+ * @LastEditTime: 2020-11-19 16:22:59
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="order">
     <!-- 我的订单头部 -->

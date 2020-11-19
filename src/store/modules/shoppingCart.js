@@ -1,7 +1,9 @@
 /*
- * @Description: 固定顶部 
+ * @Description: 商品
  * @Author: yingzi
- * @Date: 2020/11/12 20:26:10
+ * @Date: 2020-11-12 10:11:23
+ * @LastEditTime: 2020-11-19 16:14:28
+ * @LastEditors: yingzi
  */
 export default {
   state: {

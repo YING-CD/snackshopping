@@ -1,8 +1,10 @@
 <!--
-  * @Description: 详情轮播图 
-  * @Author: yingzi
-  * @Date: 2020/11/16 14:33:47
-  *-->
+ * @Description: 详情轮播图组件
+ * @Author: yingzi
+ * @Date: 2020-11-16 14:29:16
+ * @LastEditTime: 2020-11-19 16:18:09
+ * @LastEditors: yingzi
+-->
 <template>
   <swiper class="swiper"  ref="detail-swiper">
     <swiper-item

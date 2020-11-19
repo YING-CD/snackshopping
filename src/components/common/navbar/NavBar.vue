@@ -1,3 +1,10 @@
+<!--
+ * @Description: 导航栏组件
+ * @Author: yingzi
+ * @Date: 2020-11-04 11:01:28
+ * @LastEditTime: 2020-11-19 16:10:36
+ * @LastEditors: yingzi
+-->
 <template>
   <div id="navbar">
     <div class="left"><slot name="left">LOGO</slot></div>

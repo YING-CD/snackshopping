@@ -1,8 +1,10 @@
 <!--
-  * @Description: 全部商品 
-  * @Author: yingzi
-  * @Date: 2020/11/13 00:01:03
-  *-->
+ * @Description: 全部商品页面
+ * @Author: yingzi
+ * @Date: 2020-11-05 20:55:01
+ * @LastEditTime: 2020-11-19 16:16:20
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="goods" name="goods">
     <!-- 面包屑 -->

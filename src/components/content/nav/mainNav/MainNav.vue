@@ -1,8 +1,10 @@
 <!--
-  * @Description: 固定顶部 
-  * @Author: yingzi
-  * @Date: 2020/11/12 00:03:18
-  *-->
+ * @Description: 固定顶部组件
+ * @Author: yingzi
+ * @Date: 2020-11-12 00:03:08
+ * @LastEditTime: 2020-11-19 16:13:16
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="nav">
     <ul>
@@ -17,13 +19,12 @@
           <p>确定退出登录吗？</p>
           <div style="text-align: right; margin: 10px 0 0">
             <el-button size="mini" type="text" @click="visible = false"
-              >取消</el-button
-            >
+              >取消</el-button>
             <el-button type="primary" size="mini" @click="logout"
               >确定</el-button
             >
           </div>
-          <el-button type="text" slot="reference">{{
+          <el-button type="text" slot="reference" class="userName">{{
             this.$store.getters.getUser.userName
           }}</el-button>
         </el-popover>
@@ -133,6 +134,10 @@ export default {
   width: 100%;
   height: 40px;
   background-color: #2f2f2f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 111;
 }
 
 .nav ul {
@@ -160,6 +165,10 @@ export default {
 .nav .login:hover,
 .register:hover {
   color: #fff;
+}
+
+.nav .userName {
+  color: #b0b0b0;
 }
 
 .nav .order,

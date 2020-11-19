@@ -1,10 +1,10 @@
 <!--
- * @Description: 
- * @Author: hai-27
- * @Date: 2020-02-27 13:57:14
- * @LastEditors: hai-27
- * @LastEditTime: 2020-02-27 14:11:31
- -->
+ * @Description: 错误页面
+ * @Author: yingzi
+ * @Date: 2020-11-12 00:01:44
+ * @LastEditTime: 2020-11-19 16:21:52
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="error">
     <div class="main"></div>

@@ -1,8 +1,10 @@
 <!--
-  * @Description: 导航控件  
-  * @Author: yingzi
-  * @Date: 2020/11/12 00:32:42
-  *-->
+ * @Description: 导航控件组件
+ * @Author: yingzi
+ * @Date: 2020-11-12 00:32:38
+ * @LastEditTime: 2020-11-19 16:13:32
+ * @LastEditors: yingzi
+-->
 <template>
   <nav-bar class="nav-control">
     <div slot="left" class="logo">零食陶陶街</div>

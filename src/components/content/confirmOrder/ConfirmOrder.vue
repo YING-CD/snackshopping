@@ -1,8 +1,10 @@
 <!--
-  * @Description: 确认订单页面 
-  * @Author: yingzi
-  * @Date: 2020/11/16 19:10:09
-  *-->
+ * @Description: 确认订单页面
+ * @Author: yingzi
+ * @Date: 2020-11-16 19:10:06
+ * @LastEditTime: 2020-11-19 16:12:39
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="confirmOrder">
     <!-- 头部 -->

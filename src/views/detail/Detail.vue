@@ -1,8 +1,10 @@
 <!--
-  * @Description: 详情页 
-  * @Author: yingzi
-  * @Date: 2020/11/13 23:11:44
-  *-->
+ * @Description: 详情页
+ * @Author: yingzi
+ * @Date: 2020-11-06 14:31:24
+ * @LastEditTime: 2020-11-19 16:18:18
+ * @LastEditors: yingzi
+-->
 <template>
   <div id="details">
     <div class="page-header">

@@ -1,8 +1,15 @@
+<!--
+ * @Description: 程序主页面
+ * @Author: yingzi
+ * @Date: 2020-11-02 12:40:57
+ * @LastEditTime: 2020-11-19 16:23:27
+ * @LastEditors: yingzi
+-->
 <template>
   <div id="app">
     <el-container>
+      <main-nav></main-nav>
       <el-header class="header">
-        <main-nav></main-nav>
         <nav-control></nav-control>
       </el-header>
       <el-main>
@@ -90,7 +97,7 @@ export default {
 
 .el-header {
   background-color: white;
-  height: 109px !important;
+  height: 69px !important;
 }
 
 .el-main {
@@ -106,11 +113,12 @@ export default {
 
 .header {
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   z-index: 111;
   width: 100%;
 }
+
 .back-top {
   position: fixed;
   right: 100px;

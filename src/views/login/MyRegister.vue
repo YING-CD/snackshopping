@@ -1,10 +1,10 @@
 <!--
  * @Description: 用户注册组件
- * @Author: hai-27
- * @Date: 2020-02-19 22:20:35
- * @LastEditors: hai-27
- * @LastEditTime: 2020-03-01 15:34:34
- -->
+ * @Author: yingzi
+ * @Date: 2020-11-12 00:02:04
+ * @LastEditTime: 2020-11-19 16:22:43
+ * @LastEditors: yingzi
+-->
 <template>
   <div id="register">
     <el-dialog title="注册" width="300px" center :visible.sync="isRegister"  :append-to-body="true">

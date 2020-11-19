@@ -1,3 +1,10 @@
+<!--
+ * @Description: 商品组件
+ * @Author: yingzi
+ * @Date: 2020-11-05 13:59:23
+ * @LastEditTime: 2020-11-19 16:13:44
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="snacks" @click="goToDetail">
     <!-- <img v-lazy="getImg" :key="getImg" alt="零食图片"> -->
@@ -38,12 +45,15 @@ export default {
   padding-bottom: 40px;
   position: relative;
   cursor: pointer;
-  height: 300px;
+  height: 200px;
   width: 200px;
   background-color: #fff;
 }
 .snacks img {
   width: 100%;
+  padding: 6px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .snacks-info {

@@ -1,12 +1,19 @@
+<!--
+ * @Description: 热门分类组件
+ * @Author: yingzi
+ * @Date: 2020-11-05 21:01:10
+ * @LastEditTime: 2020-11-19 16:19:24
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="groups-contain">
     <div class="groups" v-for="(item, index) in groups" :key="index"  v-show="(3 - index) > 0 ? true : false">
       <div class="group-title">{{ item.title }}</div>
       <div
         class="group-goods "
-        v-for="(sitem, index) in item.snacks"
-        :key="index"
-        v-show="(11 - index) > 0 ? true : false"
+        v-for="(sitem, sindex) in item.snacks"
+        :key="sindex"
+        v-show="(11 - sindex) > 0 ? true : false"
       >
         <snacks-item :snacks="sitem" class="snacks-item"></snacks-item>
       </div>
@@ -56,7 +63,7 @@ export default {
 }
 
 .groups-contain .groups .group-title {
-  width: 250px;
+  width: 550px;
   padding: 3px 7px;
   margin-top: 5px;
 
@@ -71,12 +78,14 @@ export default {
 .groups-contain .groups .snacks-item {
   float: left;
   width: 190px;
-  height: 200px;
+  height: 230px;
+  padding: 35px;
   margin-top: 20px;
   margin-left: 20px;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   border: 1px rgb(221, 171, 43) solid;
 }
+
 .groups-contain .groups .snacks-item:hover {
   border: 1px white solid;
 }

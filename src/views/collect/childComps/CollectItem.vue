@@ -1,8 +1,10 @@
 <!--
-  * @Description: 收藏商品组件 
-  * @Author: yingzi
-  * @Date: 2020/11/16 13:01:58
-  *-->
+ * @Description: 收藏商品组件 
+ * @Author: yingzi
+ * @Date: 2020-11-16 13:01:53
+ * @LastEditTime: 2020-11-19 16:16:59
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="collect-item">
     <el-popover placement="top" width="160" v-model="visible">
@@ -20,7 +22,7 @@
       </div>
       <i class="el-icon-close delete" slot="reference"></i>
     </el-popover>
-    <snacks-item :snacks="snacks"></snacks-item>
+    <snacks-item :snacks="snacks" class="snacks-item"></snacks-item>
   </div>
 </template>
 
@@ -82,7 +84,7 @@ export default {
 .collect-item {
   position: relative;
   width: 200px;
-  height: 340px;
+  height: 250px;
   border: 1px goldenrod solid;
   margin-left: 20px;
   margin-bottom: 20px;
@@ -92,6 +94,11 @@ export default {
   border: 1px whitesmoke solid;
 }
 
+.collect-item .snacks-item {
+  width: 150px;
+  height: 200px;
+  padding: 25px;
+}
 .collect-item .delete {
   position: absolute;
   top: 20px;

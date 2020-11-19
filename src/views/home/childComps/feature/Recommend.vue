@@ -1,3 +1,10 @@
+<!--
+ * @Description: 热门推荐组件
+ * @Author: yingzi
+ * @Date: 2020-11-05 13:51:08
+ * @LastEditTime: 2020-11-19 16:18:52
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="recommend">
     <div class="recomend-title">热门推荐</div>

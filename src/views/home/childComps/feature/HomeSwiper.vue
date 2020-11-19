@@ -1,3 +1,10 @@
+<!--
+ * @Description: 首页轮播图组件
+ * @Author: yingzi
+ * @Date: 2020-11-04 14:05:29
+ * @LastEditTime: 2020-11-19 16:18:37
+ * @LastEditors: yingzi
+-->
 <template>
   <swiper class="swiper" v-if="banners.length" ref="swiper">
     <swiper-item

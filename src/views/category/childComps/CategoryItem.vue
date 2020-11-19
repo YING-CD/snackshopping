@@ -1,8 +1,10 @@
 <!--
-  * @Description: 分类项组件 
-  * @Author: yingzi
-  * @Date: 2020/11/13 11:25:18
-  *-->
+ * @Description: 分类项组件
+ * @Author: yingzi
+ * @Date: 2020-11-13 11:25:12
+ * @LastEditTime: 2020-11-19 16:16:30
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="main">
     <div class="list">
@@ -79,13 +81,14 @@ export default {
 }
 
 .main .list .snacks-item {
-  width: 200px;
-  height: 270px;
+  width: 227px;
+  height: 280px;
   margin-left: 20px;
   margin-bottom: 20px;
-  padding: 0 5px;
+  padding: 25px;
+  box-sizing: border-box;
   float: left;
-  border: 2px rgb(30,144,255) solid;
+  border: 2px rgb(111, 169, 226) solid;
 }
 .main .list .snacks-item:hover {
   border: 2px white solid;

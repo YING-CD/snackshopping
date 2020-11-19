@@ -1,8 +1,10 @@
 <!--
-  * @Description: 购物车列表子组件 
-  * @Author: yingzi
-  * @Date: 2020/11/16 19:24:12
-  *-->
+ * @Description: 购物车列表子组件 
+ * @Author: yingzi
+ * @Date: 2020-11-16 19:24:08
+ * @LastEditTime: 2020-11-19 16:15:38
+ * @LastEditors: yingzi
+-->
 <template>
   <div>
     <div class="cartItem">

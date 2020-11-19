@@ -26,7 +26,7 @@
   "classification|10-20": [{
     "title|+1": ['碳水快乐','上好佳美味','甜到你心里','我爱吃肉肉','尖叫鸡','嘎嘎嘎','水','奥利奥专场','梅干专场'],
      "cid|+1": 1,
-      "snacks|10": [{
+      "snacks|10-20": [{
         "title|+1":  ['夹心长饼','旺旺小面包','米多奇饼干','美味梅干','奥利奥巧克力味','上好佳虾条','逗乐薯片','田园薯片','EDO饼干','豌豆公主','逗乐薯片','田园薯片','一次就饱方便面','浪不浪的辣不辣','网兜的饼干'],
          "image|+1":[
            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604600022553&di=28b018cf2258461cbc00e635f8f2e949&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F19%2F03%2F07%2Fee10b18785f1a43b816ef1819cf81cc6.jpg',

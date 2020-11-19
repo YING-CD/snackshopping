@@ -1,3 +1,10 @@
+<!--
+ * @Description: 轮播图组件
+ * @Author: yingzi
+ * @Date: 2020-11-04 11:28:36
+ * @LastEditTime: 2020-11-19 16:11:02
+ * @LastEditors: yingzi
+-->
 <template>
     <div id="hy-swiper">
       <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd" ref="swiper">

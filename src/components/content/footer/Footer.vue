@@ -1,8 +1,10 @@
 <!--
-  * @Description: 底部控件 
-  * @Author: yingzi
-  * @Date: 2020/11/12 14:46:42
-  *-->
+ * @Description: 底部控件 
+ * @Author: yingzi
+ * @Date: 2020-11-12 14:46:34
+ * @LastEditTime: 2020-11-19 16:12:58
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="footer">
     <div class="promise-box">

@@ -1,8 +1,10 @@
 <!--
-  * @Description: 购物车页面 
-  * @Author: yingzi
-  * @Date: 2020/11/16 19:03:55
-  *-->
+ * @Description: 购物车页面
+ * @Author: yingzi
+ * @Date: 2020-11-06 14:31:53
+ * @LastEditTime: 2020-11-19 16:15:46
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="shoppingCart">
     <!-- 购物车头部 -->

@@ -1,8 +1,10 @@
 <!--
-  * @Description: 收藏页 
-  * @Author: yingzi
-  * @Date: 2020/11/12 00:39:00
-  *-->
+ * @Description: 收藏页 
+ * @Author: yingzi
+ * @Date: 2020-11-12 00:38:57
+ * @LastEditTime: 2020-11-19 16:16:51
+ * @LastEditors: yingzi
+-->
 <template>
   <div class="collect">
     <div class="collect-header">
@@ -13,8 +15,8 @@
     </div>
     <div class="content">
       <div class="goods-list" v-if="collectList.length > 0">
-        <div v-for="(item, index) in collectList" :key="index" class="item">
-          <collect-item :snacks="item"></collect-item>
+        <div v-for="(item, index) in collectList" :key="index">
+          <collect-item :snacks="item" class="item"></collect-item>
         </div>
       </div>
       <!-- 收藏列表为空的时候显示的内容 -->
