@@ -2,14 +2,13 @@
  * @Description: 购物车列表子组件 
  * @Author: yingzi
  * @Date: 2020-11-16 19:24:08
- * @LastEditTime: 2020-11-19 16:15:38
+ * @LastEditTime: 2020-11-24 00:47:26
  * @LastEditors: yingzi
 -->
 <template>
   <div>
     <div class="cartItem">
       <ul>
-        <!-- 购物车表头 -->
         <li class="header">
           <div class="pro-check">
             <el-checkbox v-model="isAllCheck">全选</el-checkbox>
@@ -21,11 +20,9 @@
           <div class="pro-total">小计</div>
           <div class="pro-action">操作</div>
         </li>
-        <!-- 购物车表头END -->
-
         <!-- 购物车列表 -->
         <li
-          class="product-list"
+          class="snacks-list"
           v-for="(item, index) in getShoppingCart"
           :key="item.id"
         >
@@ -37,22 +34,15 @@
           </div>
           <div class="pro-img">
             <router-link
-              :to="{
-                path: '/goods/details',
-                query: { productID: item.productID },
-              }"
+              :to="{path: '/detail',query: {snacks_id: item.snacksID }}"
             >
-              <!-- <img :src="$target + item.productImg"/> -->
-              <img :src="item.productImg" />
+              <img :src="$target + item.snacksImg"/> 
             </router-link>
           </div>
           <div class="pro-name">
             <router-link
-              :to="{
-                path: '/goods/details',
-                query: { productID: item.productID },
-              }"
-              >{{ item.productName }}</router-link
+              :to="{path: '/detail',query: {snacks_id: item.snacksID }}"
+              >{{ item.snacksName }}</router-link
             >
           </div>
           <div class="pro-price">{{ item.price }}元</div>
@@ -60,13 +50,13 @@
             <el-input-number
               size="small"
               :value="item.num"
-              @change="handleChange($event, index, item.productID)"
+              @change="handleChange($event, index, item.snacksID)"
               :min="1"
               :max="item.maxNum"
             ></el-input-number>
           </div>
           <div class="pro-total pro-total-in">
-            {{ item.price * item.num }}元
+            {{ (item.price * item.num).toFixed(2) }}元
           </div>
           <div class="pro-action">
             <el-popover placement="right">
@@ -75,7 +65,7 @@
                 <el-button
                   type="primary"
                   size="mini"
-                  @click="deleteItem($event, item.id, item.productID)"
+                  @click="deleteItem($9, item.id, item.snacksID)"
                   >确定</el-button
                 >
               </div>
@@ -134,14 +124,14 @@ export default {
   methods: {
     ...mapActions(["updateShoppingCart", "deleteShoppingCart", "checkAll"]),
     // 修改商品数量的时候调用该函数
-    handleChange(currentValue, key, productID) {
+    handleChange(currentValue, key, snacksID) {
       // 当修改数量时，默认勾选
       this.updateShoppingCart({ key: key, prop: "check", val: true });
       // 向后端发起更新购物车的数据库信息请求
       this.$axios
         .post("/api/user/shoppingCart/updateShoppingCart", {
           user_id: this.$store.getters.getUser.user_id,
-          product_id: productID,
+          snacks_id: snacksID,
           num: currentValue,
         })
         .then((res) => {
@@ -171,11 +161,11 @@ export default {
       this.updateShoppingCart({ key: key, prop: "check", val: val });
     },
     // 向后端发起删除购物车的数据库信息请求
-    deleteItem(e, id, productID) {
+    deleteItem(e, id, snacksID) {
       this.$axios
         .post("/api/user/shoppingCart/deleteShoppingCart", {
           user_id: this.$store.getters.getUser.user_id,
-          product_id: productID,
+          snacks_id: snacksID,
         })
         .then((res) => {
           switch (res.data.code) {
@@ -228,7 +218,7 @@ export default {
   padding-right: 26px;
   color: #424242;
 }
-.cartItem ul .product-list {
+.cartItem ul .snacks-list {
   height: 85px;
   padding: 15px 26px 15px 0;
   border-top: 1px solid #e0e0e0;

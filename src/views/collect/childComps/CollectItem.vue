@@ -2,7 +2,7 @@
  * @Description: 收藏商品组件 
  * @Author: yingzi
  * @Date: 2020-11-16 13:01:53
- * @LastEditTime: 2020-11-19 16:16:59
+ * @LastEditTime: 2020-11-22 01:36:54
  * @LastEditors: yingzi
 -->
 <template>
@@ -16,7 +16,7 @@
         <el-button
           type="primary"
           size="mini"
-          @click="deleteCollect(item.product_id)"
+          @click="deleteCollect(snacks.snacks_id)"
           >确定</el-button
         >
       </div>
@@ -47,23 +47,25 @@ export default {
     },
   },
   methods: {
-    deleteCollect(product_id) {
+    deleteCollect(snacks_id) {
       this.$axios
         .post("/api/user/collect/deleteCollect", {
           user_id: this.$store.getters.getUser.user_id,
-          product_id: product_id,
+          snacks_id: snacks_id,
         })
         .then((res) => {
           switch (res.data.code) {
             case "001":
               // 删除成功
               // 删除删除列表中的该商品信息
-              for (let i = 0; i < this.list.length; i++) {
-                const temp = this.list[i];
-                if (temp.product_id == product_id) {
-                  this.list.splice(i, 1);
+              for (let i = 0; i < this.snacks.length; i++) {
+                const temp = this.snacks[i];
+                if (temp.snacks_id == snacks_id) {
+                  this.snacks.splice(i, 1);
                 }
               }
+              this.visible = false;
+               window.location.reload();
               // 提示删除成功信息
               this.notifySucceed(res.data.msg);
               break;

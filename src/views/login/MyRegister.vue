@@ -2,7 +2,7 @@
  * @Description: 用户注册组件
  * @Author: yingzi
  * @Date: 2020-11-12 00:02:04
- * @LastEditTime: 2020-11-19 16:22:43
+ * @LastEditTime: 2020-11-21 23:19:46
  * @LastEditors: yingzi
 -->
 <template>

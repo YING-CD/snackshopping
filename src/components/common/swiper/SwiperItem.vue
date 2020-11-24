@@ -1,3 +1,10 @@
+<!--
+ * @Description: 轮播图内容组件
+ * @Author: yingzi
+ * @Date: 2020-11-04 11:28:36
+ * @LastEditTime: 2020-11-21 16:40:55
+ * @LastEditors: yingzi
+-->
 <template>
     <div class="slide">
       <slot></slot>
@@ -21,3 +28,4 @@
     width: 100%;
   }
 </style>
+

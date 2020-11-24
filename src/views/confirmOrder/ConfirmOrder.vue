@@ -2,7 +2,7 @@
  * @Description: 确认订单页面
  * @Author: yingzi
  * @Date: 2020-11-16 23:44:18
- * @LastEditTime: 2020-11-19 16:17:31
+ * @LastEditTime: 2020-11-22 11:40:58
  * @LastEditors: yingzi
 -->
 <template>
@@ -50,9 +50,8 @@
         <div class="goods-list">
           <ul>
             <li v-for="item in getCheckGoods" :key="item.id">
-              <!-- <img :src="$target + item.productImg" /> -->
-              <img :src="item.productImg" />
-              <span class="pro-name">{{item.productName}}</span>
+              <img :src="$target + item.snacksImg" />
+              <span class="pro-name">{{item.snacksName}}</span>
               <span class="pro-price">{{item.price}}元 x {{item.num}}</span>
               <span class="pro-status"></span>
               <span class="pro-total">{{item.price * item.num}}元</span>

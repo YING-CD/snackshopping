@@ -2,17 +2,17 @@
  * @Description: 商品组件
  * @Author: yingzi
  * @Date: 2020-11-05 13:59:23
- * @LastEditTime: 2020-11-19 16:13:44
+ * @LastEditTime: 2020-11-21 16:56:14
  * @LastEditors: yingzi
 -->
 <template>
   <div class="snacks" @click="goToDetail">
     <!-- <img v-lazy="getImg" :key="getImg" alt="零食图片"> -->
-    <img :src="snacks.image" alt="零食图片"/>
+    <img :src="$target + snacks.snacks_picture" alt="零食图片"/>
     <div class="snacks-info">
-      <p>{{ snacks.title }}</p>
-      <span class="price">¥{{ snacks.price }}</span>
-      <span class="collect">{{ snacks.cfav }}</span>
+      <p>{{ snacks.snacks_title }}</p>
+      <span class="price">¥{{ snacks.snacks_selling_price }}</span>
+      <span class="collect">{{ snacks.collections_amount }}</span>
     </div>
   </div>
 </template>
@@ -29,11 +29,11 @@ export default {
     }
   },
   methods: {
-    goToDetail: function() {
+    goToDetail() {
       // 1.获取iid
-      let iid = this.snacks.iid;
+      let snacks_id = this.snacks.snacks_id;
       // 2.跳转到详情页面
-      this.$router.push({ path: "/detail", query: { iid } });
+      this.$router.push({ path: "/detail", query: { snacks_id } });
     }
   },
   mounted() {}
@@ -57,7 +57,7 @@ export default {
 }
 
 .snacks-info {
-  padding: 0 10px;
+  /* padding: 0 10px; */
   font-size: 12px;
   position: absolute;
   bottom: 5px;

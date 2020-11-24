@@ -2,7 +2,7 @@
  * @Description: 导航控件组件
  * @Author: yingzi
  * @Date: 2020-11-12 00:32:38
- * @LastEditTime: 2020-11-19 16:13:32
+ * @LastEditTime: 2020-11-24 17:26:48
  * @LastEditors: yingzi
 -->
 <template>
@@ -13,7 +13,7 @@
         link="/home"
         class="home"
         @click="homeLink"
-        :class="{activeClass : homeIndex}"
+        :class="{ activeClass: homeIndex }"
       >
         首页
       </div>
@@ -21,14 +21,20 @@
         link="/category"
         class="category"
         @click="catLink"
-        :class="{activeClass : catIndex}"
+        :class="{ activeClass: categoryIndex }"
       >
         全部商品
       </div>
     </div>
     <div slot="right" class="search">
-      <input type="text" id="search-in" class="search-input" />
-      <input type="button" for="search-in" class="search-button" />
+      <input
+        type="text"
+        class="search-input"
+        placeholder="请输入搜索内容"
+        v-model="search"
+        @keyup.enter.prevent="searchEnterFun($event)"
+      />
+      <input type="button" class="search-button" @click="searchClick" />
     </div>
   </nav-bar>
 </template>
@@ -43,21 +49,49 @@ export default {
   },
   data() {
     return {
-      activeName: "first",
       homeIndex: false,
-      catIndex:false,
+      categoryIndex: false,
+      search: "", // 搜索条件
     };
+  },
+  watch: {
+    $route(to, from) {
+      if (to.path == "/home") {
+        this.homeIndex = true;
+        this.categoryIndex = false;
+      } else if (to.path == "/category") {
+        this.categoryIndex = true;
+        this.homeIndex = false;
+      } else {
+        this.homeIndex = false;
+        this.categoryIndex = false;
+      }
+    },
   },
   methods: {
     homeLink() {
-      this.homeIndex = true;
-      this.catIndex = false;
-      this.$router.push({ path: "/" });
+      this.$router.push({ path: "/home" });
     },
     catLink() {
-      this.homeIndex = false;
-      this.catIndex = true;
       this.$router.push({ path: "/category" });
+    },
+    // 点击搜索按钮
+    searchClick() {
+      if (this.search != "") {
+        // 跳转到全部商品页面,并传递搜索条件
+        this.$router.push({
+          path: "/category",
+          query: { search: this.search },
+        });
+        this.search = "";
+      }
+    },
+    // 通过回车搜索
+    searchEnterFun(e) {
+      var keyCode = window.event ? e.keyCode : e.which;
+      if (keyCode == 13) {
+        this.searchClick();
+      }
     },
   },
 };
@@ -120,9 +154,9 @@ export default {
   float: left;
 }
 
- .nav-control .tabControl .activeClass {
+.nav-control .tabControl .activeClass {
   color: red;
-  border-bottom: 1px red solid ;
+  border-bottom: 1px red solid;
 }
 .nav-control .search {
   height: 60px;
@@ -159,6 +193,4 @@ export default {
 .nav-control .search .search-button:focus {
   outline: 1px red solid;
 }
-
-
 </style>

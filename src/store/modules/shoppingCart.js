@@ -2,38 +2,19 @@
  * @Description: 商品
  * @Author: yingzi
  * @Date: 2020-11-12 10:11:23
- * @LastEditTime: 2020-11-19 16:14:28
+ * @LastEditTime: 2020-11-24 00:48:04
  * @LastEditors: yingzi
  */
 export default {
   state: {
-    shoppingCart: [{
-      id: "1", // 购物车id
-      productID: "1", // 商品id
-      productName: "旺旺小面包", // 商品名称
-      productImg: "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2046595678,2151094580&fm=26&gp=0.jpg", // 商品图片
-      price: "22", // 商品价格
-      num: 2, // 商品数量
-      maxNum: "22", // 商品限购数量
-      check: false // 是否勾选
-    },
-  {
-    id: "2", // 购物车id
-      productID: "2", // 商品id
-      productName: "星星糖", // 商品名称
-      productImg: "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2741738376,184653293&fm=26&gp=0.jpg", // 商品图片
-      price: "25.32", // 商品价格
-      num: 1, // 商品数量
-      maxNum: "22", // 商品限购数量
-      check: false // 是否勾选
-  }]
+    shoppingCart: {},
     // shoppingCart结构
     /* 
     shoppingCart = {
       id: "", // 购物车id
-      productID: "", // 商品id
-      productName: "", // 商品名称
-      productImg: "", // 商品图片
+      snacksID: "", // 商品id
+      snacksName: "", // 商品名称
+      snacksImg: "", // 商品图片
       price: "", // 商品价格
       num: "", // 商品数量
       maxNum: "", // 商品限购数量
@@ -99,7 +80,7 @@ export default {
           totalPrice += temp.price * temp.num;
         }
       }
-      return totalPrice;
+      return totalPrice.toFixed(2);
     }
   },
   mutations: {
@@ -128,12 +109,12 @@ export default {
       // 根据商品在购物车的数组的索引和属性更改
       state.shoppingCart[payload.key][payload.prop] = payload.val;
     },
-    addShoppingCartNum(state, productID) {
+    addShoppingCartNum(state, snacksID) {
       // 增加购物车商品数量
       // 用于在商品详情页点击添加购物车,后台返回002，“该商品已在购物车，数量 +1”，更新vuex的商品数量
       for (let i = 0; i < state.shoppingCart.length; i++) {
         const temp = state.shoppingCart[i];
-        if (temp.productID == productID) {
+        if (temp.snacksID == snacksID) {
           if (temp.num < temp.maxNum) {
             temp.num++;
           }
@@ -174,8 +155,8 @@ export default {
     },
     addShoppingCartNum({
       commit
-    }, productID) {
-      commit('addShoppingCartNum', productID);
+    }, snacksID) {
+      commit('addShoppingCartNum', snacksID);
     },
     deleteShoppingCart({
       commit

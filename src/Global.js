@@ -1,9 +1,9 @@
 /*
- * @Description: 网络请求体封装
- * @Author: yingzi
- * @Date: 2020-11-11 23:20:27
- * @LastEditTime: 2020-11-19 17:36:54
+ * @Description: 全局变量
+ * @Author: hai-27
+ * @Date: 2020-02-23 13:40:18
  * @LastEditors: yingzi
+ * @LastEditTime: 2020-11-20 15:15:01
  */
 exports.install = function (Vue) {
   Vue.prototype.$target = "http://localhost:3030/"; // 本地后端地址

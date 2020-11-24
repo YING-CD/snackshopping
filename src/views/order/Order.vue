@@ -2,7 +2,7 @@
  * @Description: 我的订单页面
  * @Author: yingzi
  * @Date: 2020-11-12 00:36:20
- * @LastEditTime: 2020-11-19 16:22:59
+ * @LastEditTime: 2020-11-24 16:38:18
  * @LastEditors: yingzi
 -->
 <template>
@@ -42,30 +42,30 @@
           <!-- 我的订单表头END -->
 
           <!-- 订单列表 -->
-          <li class="product-list" v-for="(product, i) in item" :key="i">
+          <li class="snacks-list" v-for="(snacks, i) in item" :key="i">
             <div class="pro-img">
               <router-link
                 :to="{
-                  path: '/goods/details',
-                  query: { productID: product.product_id },
+                  path: '/detail',
+                  query: { snacks_id: snacks.snacks_id },
                 }"
               >
-                <img :src="$target + product.product_picture" />
+                <img :src="$target + snacks.snacks_picture" />
               </router-link>
             </div>
             <div class="pro-name">
               <router-link
                 :to="{
-                  path: '/goods/details',
-                  query: { productID: product.product_id },
+                  path: '/detail',
+                  query: { snacks_id: snacks.snacks_id },
                 }"
-                >{{ product.product_name }}</router-link
+                >{{ snacks.snacks_name }}</router-link
               >
             </div>
-            <div class="pro-price">{{ product.product_price }}元</div>
-            <div class="pro-num">{{ product.product_num }}</div>
+            <div class="pro-price">{{ snacks.snacks_price }}元</div>
+            <div class="pro-num">{{ snacks.snacks_num }}</div>
             <div class="pro-total pro-total-in">
-              {{ product.product_price * product.product_num }}元
+              {{ snacks.snacks_price * snacks.snacks_num }}元
             </div>
           </li>
         </ul>
@@ -117,6 +117,7 @@ export default {
       })
       .then(res => {
         if (res.data.code === "001") {
+          console.log(res);
           this.orders = res.data.orders;
         } else {
           this.notifyError(res.data.msg);
@@ -137,8 +138,8 @@ export default {
         let totalPrice = 0;
         for (let j = 0; j < element.length; j++) {
           const temp = element[j];
-          totalNum += temp.product_num;
-          totalPrice += temp.product_price * temp.product_num;
+          totalNum += temp.snacks_num;
+          totalPrice += temp.snacks_price * temp.snacks_num;
         }
         total.push({ totalNum, totalPrice });
       }
@@ -183,6 +184,7 @@ export default {
   background-color: #fff;
   color: #424242;
   line-height: 85px;
+  list-style: none;
 }
 /* 我的订单表头CSS */
 .order .content ul .order-info {
@@ -208,7 +210,7 @@ export default {
 /* 我的订单表头CSS END */
 
 /* 订单列表CSS */
-.order .content ul .product-list {
+.order .content ul .snacks-list {
   height: 85px;
   padding: 15px 26px 15px 0;
   border-top: 1px solid #e0e0e0;
@@ -229,6 +231,7 @@ export default {
 }
 .order .content ul .pro-name a {
   color: #424242;
+  text-decoration: none;
 }
 .order .content ul .pro-name a:hover {
   color: #ff6700;
@@ -246,7 +249,7 @@ export default {
 }
 .order .content ul .pro-total {
   float: left;
-  width: 160px;
+  width: 100px;
   padding-right: 81px;
   text-align: right;
 }

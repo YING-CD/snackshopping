@@ -2,26 +2,25 @@
  * @Description: 你可能喜欢组件
  * @Author: yingzi
  * @Date: 2020-11-05 21:00:42
- * @LastEditTime: 2020-11-19 16:19:08
+ * @LastEditTime: 2020-11-23 12:00:22
  * @LastEditors: yingzi
 -->
 <template>
   <div class="favorite clearfix">
     <div class="favorite-header">
-      <div class="favorite-title">{{ favorite.ftitle }}</div>
-      <img src="~assets/img/home/favorite.jpg" alt="图片" class="fa-img">
+      <div class="favorite-title">你可能喜欢</div>
+      <img src="~assets/img/home/favorite.jpg" alt="图片" class="fa-img" />
     </div>
-    
     <div class="favorite-containt">
       <div
         class="favorite-goods"
-        v-for="(sitem, index) in favorite.snacks"
+        v-for="(item, index) in favorite"
         :key="index"
         v-show="14 - index > 0 ? true : false"
       >
-        <snacks-item :snacks="sitem" class="snacks-item"></snacks-item>
+        <snacks-item :snacks="item" class="snacks-item"></snacks-item>
       </div>
-      <div class="more" @click="fclick(favorite.cid)">点击浏览更多 ....</div>
+      <div class="more" @click="fclick()">点击浏览更多 ....</div>
     </div>
   </div>
 </template>
@@ -33,20 +32,30 @@ export default {
   components: {
     SnacksItem,
   },
-  props: {
-    favorite: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
+  data() {
+    return {
+      favorite: [],
+    };
+  },
+  created() {
+    // 获取轮播图数据
+    this.$axios
+      .post("/api/product/getAllProduct", {
+        currentPage: 1,
+        pageSize:20
+      })
+      .then((res) => {
+        this.favorite = res.data.snacks;
+      })
+      .catch((err) => {
+        return Promise.reject(err);
+      });
   },
   methods: {
-    fclick(cid) {
-      this.$router.push({ path: "/category", query: { cid } });
-    },
-  },
-  mounted() {},
+    fclick() {
+      this.$router.push({ path: "/category"});
+    }
+  }
 };
 </script>
 
@@ -58,8 +67,8 @@ export default {
 }
 
 .favorite .favorite-header {
-   width: 200px;
-   overflow: hidden;
+  width: 200px;
+  overflow: hidden;
 }
 
 .favorite .favorite-header .favorite-title {
@@ -72,7 +81,7 @@ export default {
   text-align: center;
   padding: 2px 0;
   font-family: "黑体";
-  color: rgb(226, 135, 141) ;
+  color: rgb(226, 135, 141);
 }
 
 .favorite .favorite-header .fa-img {
@@ -94,11 +103,11 @@ export default {
   box-sizing: border-box;
   margin-top: 20px;
   margin-right: 15px;
-  border: 1px rgb(226, 135, 141)  solid;
+  border: 1px rgb(226, 135, 141) solid;
   float: left;
 }
 .favorite .snacks-item:hover {
-   border: 1px white solid;
+  border: 1px white solid;
 }
 
 .favorite .more {

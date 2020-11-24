@@ -2,13 +2,12 @@
  * @Description: 用户
  * @Author: yingzi
  * @Date: 2020-11-12 10:11:23
- * @LastEditTime: 2020-11-19 16:14:42
+ * @LastEditTime: 2020-11-21 23:13:42
  * @LastEditors: yingzi
  */
 export default {
   state: {
-    user: {userName: "yingzi"}, // 登录的用户
-    // user: "", // 登录的用户
+    user: "", // 登录的用户
     showLogin: false // 用于控制是否显示登录组件
   },
   getters: {

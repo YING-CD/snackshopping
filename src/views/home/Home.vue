@@ -2,18 +2,18 @@
  * @Description: 首页页面
  * @Author: yingzi
  * @Date: 2020-11-02 13:24:19
- * @LastEditTime: 2020-11-19 16:21:26
+ * @LastEditTime: 2020-11-22 22:57:37
  * @LastEditors: yingzi
 -->
 <template>
   <div id="home" ref="home">
     <div class="feature">
-      <recommend :recommend="recommend"></recommend>
-      <home-swiper :banners="banners"></home-swiper>
+      <recommend></recommend>
+      <home-swiper></home-swiper>
     </div>
     <div class="content">
-      <favorite :favorite="favorite"></favorite>
-      <group-item :groups="classification"></group-item>
+      <favorite></favorite>
+      <group></group>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@
 <script>
 import HomeSwiper from "./childComps/feature/HomeSwiper";
 import Recommend from "./childComps/feature/Recommend";
-import GroupItem from "./childComps/group/GroupItem";
+import Group from "./childComps/group/Group";
 import Favorite from "./childComps/group/Favorite";
 
 import axios from "axios";
@@ -31,39 +31,8 @@ export default {
   components: {
     HomeSwiper,
     Recommend,
-    GroupItem,
+    Group,
     Favorite,
-  },
-  data() {
-    return {
-      banners: [],
-      recommend: [],
-      classification: [],
-      favorite: {},
-    };
-  },
-
-  computed: {},
-  mounted() {
-    this.getBanners();
-  },
-
-  methods: {
-    getBanners() {
-      axios
-        .get("/home/information")
-        .then((res) => {
-          console.log(res.data);
-          var result = res.data;
-          this.banners = result.banners;
-          this.recommend = result.recommend;
-          this.classification = result.classification;
-          this.favorite = result.favorite;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
   },
 };
 </script>
@@ -89,6 +58,4 @@ export default {
   background-color: white;
   margin-top: 50px;
 }
-
-
 </style>

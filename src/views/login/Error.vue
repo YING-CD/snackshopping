@@ -1,10 +1,10 @@
 <!--
- * @Description: 错误页面
- * @Author: yingzi
- * @Date: 2020-11-12 00:01:44
- * @LastEditTime: 2020-11-19 16:21:52
+ * @Description: 
+ * @Author: hai-27
+ * @Date: 2020-02-27 13:57:14
  * @LastEditors: yingzi
--->
+ * @LastEditTime: 2020-11-23 23:08:10
+ -->
 <template>
   <div class="error">
     <div class="main"></div>
@@ -19,6 +19,6 @@
 .error .main {
   margin: 0 362.5px;
   height: 500px;
-  background: url(../assets/imgs/error.png) no-repeat;
+  background: url(~assets/img/error.png) no-repeat;
 }
 </style>

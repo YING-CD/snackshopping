@@ -2,22 +2,18 @@
  * @Description: 热门分类组件
  * @Author: yingzi
  * @Date: 2020-11-05 21:01:10
- * @LastEditTime: 2020-11-19 16:19:24
+ * @LastEditTime: 2020-11-23 12:41:33
  * @LastEditors: yingzi
 -->
 <template>
-  <div class="groups-contain">
-    <div class="groups" v-for="(item, index) in groups" :key="index"  v-show="(3 - index) > 0 ? true : false">
-      <div class="group-title">{{ item.title }}</div>
-      <div
-        class="group-goods "
-        v-for="(sitem, sindex) in item.snacks"
-        :key="sindex"
-        v-show="(11 - sindex) > 0 ? true : false"
-      >
-        <snacks-item :snacks="sitem" class="snacks-item"></snacks-item>
-      </div>
-      <div class="more" @click="grclick(item.cid)">点击浏览更多 ....</div>
+  <div class="group-item">
+    <div
+      class="group-goods"
+      v-for="(item, index) in gsnacks"
+      :key="index"
+      v-show="11 - index > 0 ? true : false"
+    >
+      <snacks-item :snacks="item" class="snacks-item"></snacks-item>
     </div>
   </div>
 </template>
@@ -27,55 +23,21 @@ import SnacksItem from "content/snacks/SnacksItem";
 export default {
   name: "GroupItem",
   components: {
-    SnacksItem
+    SnacksItem,
   },
   props: {
-    groups: {
+    gsnacks: {
       type: Array,
       default() {
         return [];
-      }
-    }
+      },
+    },
   },
-  methods: {
-    grclick(cid) {
-       this.$router.push({ path: "/category",query:{cid}});
-    }
-  },
-  mounted() {}
 };
 </script>
 
 <style>
-.groups-contain {
-  margin-top: 50px;
-  background-color: #E9EEF3;
-}
-
-.groups-contain .groups {
-  height: 560px;
-  width: 1280px;
-  margin-bottom: 40px;
-  /* overflow: hidden; */
-  
-  position: relative;
-  background-color: #dde4ee;
-}
-
-.groups-contain .groups .group-title {
-  width: 550px;
-  padding: 3px 7px;
-  margin-top: 5px;
-
-  font-weight: 500;
-  font-size: 23px;
-  text-align: left;
-  font-family: "黑体";
-  color: rgb(221, 171, 43);
-  /* background-color: rgb(221, 171, 43); */
-}
-
-.groups-contain .groups .snacks-item {
+ .group-item .snacks-item {
   float: left;
   width: 190px;
   height: 230px;
@@ -86,22 +48,7 @@ export default {
   border: 1px rgb(221, 171, 43) solid;
 }
 
-.groups-contain .groups .snacks-item:hover {
+ .group-item .snacks-item:hover {
   border: 1px white solid;
-}
-
-.groups-contain .groups .more {
-  width: 190px;
-  margin-top: 120px;
-  float: left;
-  font-weight: 600;
-  text-align: center;
-  color: gray;
-  cursor: pointer;
-}
-
-.groups .more:hover {
-  font-weight: 700;
-  color: rgb(221, 171, 43);
 }
 </style>

@@ -2,7 +2,7 @@
  * @Description: 收藏页 
  * @Author: yingzi
  * @Date: 2020-11-12 00:38:57
- * @LastEditTime: 2020-11-19 16:16:51
+ * @LastEditTime: 2020-11-22 01:22:51
  * @LastEditors: yingzi
 -->
 <template>
@@ -46,26 +46,18 @@ export default {
   },
   activated() {
     // 获取收藏数据
-    // this.$axios
-    //   .post("/api/user/collect/getCollect", {
-    //     user_id: this.$store.getters.getUser.user_id,
-    //   })
-    //   .then((res) => {
-    //     if (res.data.code === "001") {
-    //       this.collectList = res.data.collectList;
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     return Promise.reject(err);
-    //   });
-    axios
-      .get("/home/information")
+    this.$axios
+      .post("/api/user/collect/getCollect", {
+        user_id: this.$store.getters.getUser.user_id,
+      })
       .then((res) => {
-        var result = res.data;
-        this.collectList = result.collectList;
+        if (res.data.code === "001") {
+          console.log(res);
+          this.collectList = res.data.collectList;
+        }
       })
       .catch((err) => {
-        console.log(err);
+        return Promise.reject(err);
       });
   },
   methods: {},

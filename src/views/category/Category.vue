@@ -2,7 +2,7 @@
  * @Description: 全部商品页面
  * @Author: yingzi
  * @Date: 2020-11-05 20:55:01
- * @LastEditTime: 2020-11-19 16:16:20
+ * @LastEditTime: 2020-11-23 22:45:11
  * @LastEditors: yingzi
 -->
 <template>
@@ -25,18 +25,28 @@
         <el-tabs v-model="activeName" type="card">
           <el-tab-pane
             v-for="item in categoryList"
-            :key="item.cid"
-            :label="item.title"
-            :name="'' + item.cid"
-          >
-          <div class="contain">
-            <category-item :snacks="snacks"></category-item>
-          </div>
-          </el-tab-pane>
+            :key="item.category_id"
+            :label="item.category_name"
+            :name="item.category_name"
+          />
         </el-tabs>
       </div>
     </div>
     <!-- 分类标签END -->
+    <!-- 主要内容区 -->
+    <div class="main">
+      <category-item :csnacks="snacksList"></category-item>
+      <!-- 分页 -->
+      <div class="pagination">
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          :page-size="pageSize"
+          :total="total"
+          @current-change="currentChange"
+        ></el-pagination>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -51,85 +61,83 @@ export default {
   data() {
     return {
       categoryList: [], //分类列表
-      // snacks: [],//
-      categoryID: [], // 分类id
-      product: [], // 商品列表
-      productList: "",
-      activeName: "0", // 分类列表当前选中的id
+      categoryName: "", // 分类名字
+      snacksList: [], // 商品列表
+      total: 0, // 商品总量
+      pageSize: 15, // 每页显示的商品数量
+      currentPage: 1, //当前页码
+      activeName: "全部", // 分类列表当前选中的名字
       search: "", // 搜索条件
     };
-  },
-  computed: {
-    snacks() {
-      var index = Number(this.activeName);
-      console.log(index);
-      return this.categoryList[index].snacks;
-    }
   },
   created() {
     // 获取分类列表
     this.getCategory();
   },
   activated() {
-    this.activeName = "0"; // 初始化分类列表当前选中的id为-1
-    // this.total = 0; // 初始化商品总量为0
-    // this.currentPage = 1; //初始化当前页码为1
+    this.activeName = ""; // 初始化分类列表当前选中为全部商品
+    this.total = 0; // 初始化商品总量为0
+    this.currentPage = 1; //初始化当前页码为1
     // 如果路由没有传递参数，默认为显示全部商品
     if (Object.keys(this.$route.query).length == 0) {
-      this.categoryID = [];
-      this.activeName = "0";
+      console.log("没有传递参数");
+      this.categoryName = "";
+      this.activeName = "全部";
+      this.getData();
       return;
     }
-    // 如果路由传递了categoryID，则显示对应的分类商品
-    if (this.$route.query.categoryID != undefined) {
-      this.categoryID = this.$route.query.cid;
-      console.log(categoryID);
-      if (this.categoryID.length == 1) {
-        this.activeName = "" + this.categoryID[0];
-      }
+    // 如果路由传递了categoryName，则显示对应的分类商品
+    if (this.$route.query.categoryName != undefined) {
+      this.categoryName = this.$route.query.categoryName;
+      this.activeName = this.categoryName;
+      console.log(this.activeName);
       return;
     }
     // 如果路由传递了search，则为搜索，显示对应的分类商品
     if (this.$route.query.search != undefined) {
       this.search = this.$route.query.search;
+      console.log(this.search);
     }
   },
   watch: {
-    // 监听点击了哪个分类标签，通过修改分类id，响应相应的商品
-    activeName: function (val) {
-      if (val == 0) {
-        this.categoryID = [];
+    // 监听点击了哪个分类标签，通过修改分类名字，响应相应的商品
+    activeName: function (name) {
+      if (name == "全部") {
+        this.categoryName = "";
       }
-      if (val > 0) {
-        this.categoryID = [Number(val)];
+      if (name != "全部") {
+        this.categoryName = name;
       }
       // 初始化商品总量和当前页码
-      // this.total = 0;
-      // this.currentPage = 1;
-      // 更新地址栏链接，方便刷新页面可以回到原来的页面
-      this.$router.push({
-        path: "/category",
-        query: { categoryID: this.categoryID },
-      });
+      this.total = 0;
+      this.currentPage = 1;
+      // // 更新地址栏链接，方便刷新页面可以回到原来的页面
+      // this.$router.push({
+      //   path: "/category",
+      //   query: { categoryName: this.categoryName },
+      // });
     },
     // 监听搜索条件，响应相应的商品
-    // search: function (val) {
-    //   if (val != "") {
-    //     this.getProductBySearch(val);
-    //   }
-    // },
-    // 监听分类id，响应相应的商品
-    categoryID: function () {
-      // this.getCategory();
+    search(val) {
+      console.log(val);
+      if (val != "") {
+        this.getProductBySearch();
+        console.log(typeof val);
+      }
+    },
+    // 监听分类名字，响应相应的商品
+    categoryName() {
+      console.log("获取数据")
+      this.getData();
       this.search = "";
     },
     // 监听路由变化，更新路由传递了搜索条件
     $route: function (val) {
       if (val.path == "/category") {
         if (val.query.search != undefined) {
-          this.activeName = "-1";
-          // this.currentPage = 1;
-          // this.total = 0;
+          this.activeName = "";
+          this.currentPage = 1;
+          this.total = 0;
           this.search = val.query.search;
         }
       }
@@ -138,15 +146,93 @@ export default {
   methods: {
     // 向后端请求分类列表数据
     getCategory() {
-      axios
-        .get("/home/information")
+      this.$axios
+        .post("/api/product/getCategory", {})
         .then((res) => {
-          var result = res.data;
-          this.categoryList = result.classification;
+          const cate = res.data.category;
+          const val = {
+            category_id: 0,
+            category_name: "全部",
+          };
+          cate.unshift(val);
+          this.categoryList = cate;
         })
         .catch((err) => {
-          console.log(err);
+          return Promise.reject(err);
         });
+    },
+    // 向后端请求全部商品或分类商品数据
+    getData() {
+      // 如果分类列表为空则请求全部商品数据，否则请求分类商品数据
+      if (this.categoryName == "") {
+        this.$axios
+          .post("/api/product/getAllProduct", {
+            currentPage: this.currentPage,
+            pageSize: this.pageSize,
+          })
+          .then((res) => {
+            this.snacksList = res.data.snacks;
+            this.total = res.data.total;
+          })
+          .catch((err) => {
+            return Promise.reject(err);
+          });
+      } else if (this.categoryName != "") {
+        this.$axios
+          .post("/api/product/getProductByCategory", {
+            categoryName: this.categoryName,
+            currentPage: this.currentPage,
+            pageSize: this.pageSize,
+          })
+          .then((res) => {
+            this.snacksList = res.data.snacks;
+            this.total = res.data.total;
+          })
+          .catch((err) => {
+            return Promise.reject(err);
+          });
+      }
+    },
+    // 通过搜索条件向后端请求商品数据
+    getProductBySearch() {
+      this.$axios
+        .post("/api/product/getProductBySearch", {
+          search: this.search,
+          currentPage: this.currentPage,
+          pageSize: this.pageSize,
+        })
+        .then((res) => {
+          console.log(res);
+          this.snacksList = res.data.snacks;
+          this.total = res.data.total;
+        })
+        .catch((err) => {
+          return Promise.reject(err);
+        });
+    },
+    // 返回顶部
+    backtop() {
+      const timer = setInterval(function () {
+        const top =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const speed = Math.floor(-top / 5);
+        document.documentElement.scrollTop = document.body.scrollTop =
+          top + speed;
+
+        if (top === 0) {
+          clearInterval(timer);
+        }
+      }, 20);
+    },
+    // 页码变化调用currentChange方法
+    currentChange(currentPage) {
+      this.currentPage = currentPage;
+      if (this.search != "") {
+        this.getProductBySearch();
+      } else {
+        this.getData();
+      }
+      this.backtop();
     },
   },
 };
@@ -158,7 +244,7 @@ export default {
   background-color: #f5f5f5;
   margin: 0 auto;
   position: relative;
-  top: 100px;
+  top: 110px;
 }
 
 .goods .el-tab-pane {
@@ -194,4 +280,20 @@ export default {
   float: left;
 }
 /* 分类标签CSS END */
+
+/* 主要内容区CSS */
+.goods .main {
+  margin: 0 auto;
+  max-width: 1280px;
+  background-color: #fff;
+}
+.goods .main .pagination {
+  height: 50px;
+  text-align: center;
+}
+.goods .main .none-product {
+  color: #333;
+  margin-left: 13.7px;
+}
+/* 主要内容区CSS END */
 </style>

@@ -2,7 +2,7 @@
  * @Description: 登录请求
  * @Author: yingzi
  * @Date: 2020-11-19 12:23:22
- * @LastEditTime: 2020-11-19 15:19:25
+ * @LastEditTime: 2020-11-19 16:34:32
  * @LastEditors: yingzi
  */
 import {request} from "./index";
@@ -10,7 +10,7 @@ import {request} from "./index";
 export function login(userName, password) {
   return request({
     // type: 'post',
-    url: '/users/login',
+    url: 'api/users/login',
     params: {
       userName,
       password

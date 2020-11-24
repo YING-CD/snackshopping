@@ -2,7 +2,7 @@
  * @Description: 登录组件
  * @Author: yingzi
  * @Date: 2020-11-12 00:01:31
- * @LastEditTime: 2020-11-19 16:22:16
+ * @LastEditTime: 2020-11-21 23:12:12
  * @LastEditors: yingzi
 -->
 <template>
@@ -45,7 +45,6 @@
 </template>
 <script>
 import { mapActions } from "vuex";
-import {login} from "network/login.js"
 export default {
   name: "MyLogin",
   data() {
@@ -110,8 +109,12 @@ export default {
       this.$refs["ruleForm"].validate((valid) => {
         //如果通过校验开始登录
         if (valid) {
-          login(this.LoginUser.name, this.LoginUser.pass).then((res) => {
-            console.log(res);
+          this.$axios
+            .post("/api/users/login", {
+              userName: this.LoginUser.name,
+              password: this.LoginUser.pass,
+            })
+            .then((res) => {
               // “001”代表登录成功，其他的均为失败
               if (res.data.code === "001") {
                 // 隐藏登录组件
